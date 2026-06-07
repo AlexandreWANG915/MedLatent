@@ -293,16 +293,3 @@ The paper's main MedLatent runs use:
 MedLatent evaluates empirical reconstruction leakage from transmitted latent objects. The attack prompt is implemented in `medlatent/prompts.py` and the token-F1 helper is implemented in `medlatent/leakage.py`.
 
 Text-sharing baselines are excluded from this repository because their leakage is direct text exposure rather than reconstruction from a latent representation.
-
-## Artifact Hygiene
-
-The repository excludes:
-
-- model weights
-- trained checkpoints
-- latent cache shards
-- logs
-- private local paths
-- baseline implementations
-
-The tests include a sanitization check to prevent local user paths from entering review-facing files.
