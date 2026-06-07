@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Large artifacts are documented, not committed.
+*.pt
+*.safetensors
+*.bin
+*.jsonl
+*.log
+artifacts/
+outputs/
+cache/
+latent_caches/
+
+# Local environment files.
+.env
+.env.*

@@ -1,0 +1,27 @@
+method: MedLatent-X
+data:
+  train_file: ${MEDLATENT_DATA_DIR}/crossrare_train.json
+  val_file: ${MEDLATENT_DATA_DIR}/crossrare_val.json
+  test_file: ${MEDLATENT_DATA_DIR}/crossrare_test.json
+  hospital_dir: ${MEDLATENT_DATA_DIR}/hospitals
+model:
+  host_family: qwen3_4b
+  encoder_families:
+    - llama32_3b
+    - mediphi
+cache:
+  root: ${MEDLATENT_ARTIFACT_DIR}/latent_caches
+training:
+  num_hospitals: 3
+  num_latents: 32
+  max_prompt_length: 320
+  max_target_length: 64
+  effective_batch_size: 4
+  epochs: 3
+  learning_rate: 0.00005
+  weight_decay: 0.01
+  warmup_steps: 100
+  gradient_clip: 1.0
+  seed: 42
+output:
+  artifact_dir: ${MEDLATENT_ARTIFACT_DIR}/medlatent_x

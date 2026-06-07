@@ -1,0 +1,23 @@
+method: MedLatent-H
+data:
+  train_file: ${MEDLATENT_DATA_DIR}/crossrare_train.json
+  val_file: ${MEDLATENT_DATA_DIR}/crossrare_val.json
+  hospital_dir: ${MEDLATENT_DATA_DIR}/hospitals
+  phenotype_embeddings: ${MEDLATENT_DATA_DIR}/hpo_embeddings.json
+  phenotype_ic: ${MEDLATENT_DATA_DIR}/hpo_ic.json
+model:
+  host_family: llama32_3b
+training:
+  num_hospitals: 3
+  num_latents: 32
+  retrieved_cases_per_hospital: 1
+  max_prompt_length: 320
+  max_target_length: 64
+  effective_batch_size: 8
+  epochs: 5
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  warmup_steps: 100
+  seed: 42
+output:
+  artifact_dir: ${MEDLATENT_ARTIFACT_DIR}/medlatent_h

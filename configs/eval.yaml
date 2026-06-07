@@ -1,0 +1,18 @@
+data:
+  test_file: ${MEDLATENT_DATA_DIR}/crossrare_test.json
+  hospital_dir: ${MEDLATENT_DATA_DIR}/hospitals
+model:
+  host_family: qwen3_4b
+generation:
+  temperature: 0.0
+  max_new_tokens: 64
+metrics:
+  diagnosis:
+    - accuracy
+    - macro_f1
+    - judge_match
+  leakage:
+    - token_f1
+    - bertscore
+artifacts:
+  latent_interface_dir: ${MEDLATENT_ARTIFACT_DIR}

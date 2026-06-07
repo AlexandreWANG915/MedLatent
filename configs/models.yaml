@@ -1,0 +1,14 @@
+# Sanitized model registry. Replace environment-variable placeholders locally.
+families:
+  qwen3_4b:
+    model_path: ${MEDLATENT_MODEL_DIR}/qwen3-4b-instruct
+    hidden_size: 2560
+    tokenizer_family: qwen
+  llama32_3b:
+    model_path: ${MEDLATENT_MODEL_DIR}/llama-3.2-3b-instruct
+    hidden_size: 3072
+    tokenizer_family: llama3
+  mediphi:
+    model_path: ${MEDLATENT_MODEL_DIR}/mediphi-instruct
+    hidden_size: 3072
+    tokenizer_family: phi3
